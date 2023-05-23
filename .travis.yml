@@ -1,0 +1,8 @@
+sudo: required
+services: 
+     - docker:
+before install:
+    - docker build -t shalu/react-app -f Dockerfile.dev .
+
+scripts: 
+    - docker run shalu/react-app npm run test -- --coverage         
